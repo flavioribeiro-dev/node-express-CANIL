@@ -40,7 +40,10 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
+    "moduleResolution": "nodenext"
   }
 }

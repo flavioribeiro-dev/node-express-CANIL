@@ -4,6 +4,7 @@ import helmet  from 'helmet';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import mustache from 'mustache-express';
+import routerMain from './routes/router.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,9 +23,7 @@ server.set('mustache', mustache());
 server.set('view engine', 'mustache');
 server.set('views', path.join(__dirname, 'views'));
 
-server.get('/', (req, res) => {
-    res.send(`Tudo ótimo por aqui - servidor rodando na porta ${PORT}`);
-})
+server.use('/', routerMain);
 
 server.listen(PORT, () => {
     console.log("Servidor rodando ok 123");
