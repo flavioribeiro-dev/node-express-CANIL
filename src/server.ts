@@ -15,11 +15,11 @@ const PORT = process.env.PORT;
 const server = express();
 
 server.use(helmet());
-server.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static(path.join(__dirname, '../public')));
 server.use(express.urlencoded({extended: true }));
 server.use(express.json());
 
-server.set('mustache', mustache());
+server.engine('mustache', mustache());
 server.set('view engine', 'mustache');
 server.set('views', path.join(__dirname, 'views'));
 
