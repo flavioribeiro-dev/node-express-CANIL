@@ -19,9 +19,9 @@ server.use(express.static(path.join(__dirname, '../public')));
 server.use(express.urlencoded({extended: true }));
 server.use(express.json());
 
+server.set('views', path.join(__dirname, './views'));
 server.engine('mustache', mustache());
 server.set('view engine', 'mustache');
-server.set('views', path.join(__dirname, 'views'));
 
 server.use('/', routerMain);
 

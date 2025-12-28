@@ -1,23 +1,34 @@
 import type { Request, Response } from 'express';
 
 export const home = (req: Request, res: Response) => {
-    // res.send("estou na página HOME");
-    res.render("pages/page")
+    return res.render("pages/page", {
+        banner: {
+            title: 'Todos os Animais',
+            background: 'allanimals.jpg'
+        }
+    })
 }
 export const dogs = (req: Request, res: Response) => {
-    // res.send("estou na página DOGs");
-    res.render("pages/dogs")
+    return res.render("pages/page", {
+        banner: {
+            title: 'Cachorros',
+            background: 'banner_dog.jpg'
+        }
+    })
 }
 export const cats = (req: Request, res: Response) => {
-    // res.send("estou na página CATs");
-    res.render("pages/cats")
+    return res.render("pages/page", {
+        banner: {
+            title: 'Gatos',
+            background: 'banner_cat.jpg'
+        }
+    })
 }
 export const fishes = (req: Request, res: Response) => {
-    // res.send("estou na página FISHEs");
-    res.render("pages/fishes");
+    return res.render("pages/page", {
+        banner: {
+            title: 'Peixes',
+            background: 'banner_fish.jpg'
+        }
+    })
 }
-
-
-
-
-// export default router;
